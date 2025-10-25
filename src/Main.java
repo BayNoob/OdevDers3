@@ -1,23 +1,15 @@
 void main() {
-    // Senaryo
-    String telefon = "01234567890";
-    if (telefon.length()==11){
-        if (Character.getNumericValue(telefon.charAt(0)) == 0) {
-            System.out.println("Telefon numaranız geçerli.");
-        }  else {
-            System.out.println("Telefon numaranız geçersiz!");
-        }
-    } else {
-        System.out.println("Telefon numaranız geçersiz!");
+    System.out.println("\n --Sıralanmamış Sayılar--");
+    Random random = new Random();
+    int[] numbers = new int[50];
+    for (int i = 0; i < 50 ; i++) {
+        numbers[i] = random.nextInt(1,1000);
+        System.out.println(numbers[i]);
     }
-    // Not
-    Double vizenot = 50.0;
-    Double finalnot = 80.0;
-    Double ortalama = vizenot*0.4+finalnot*0.6;
-    if (ortalama >= 75) {
-        System.out.println("Barajı geçtiniz. Notunuz: " + ortalama);
-    } else {
-        System.out.println("Barajı geçemediniz. Notunuz: " + ortalama);
+    System.out.println("\n --Sıralanmış Sayılar--");
+    Arrays.sort(numbers);
+    for (int n : numbers) {
+        System.out.println(n);
     }
 }
 
