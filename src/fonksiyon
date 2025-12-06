@@ -1,0 +1,28 @@
+static String sifreguclumu(String sifre) {
+    int puan = 0;
+    if (sifre.length() > 8) {
+        puan += 10;
+    }
+    if (sifre.matches(".*[0-9].*")) {
+        puan += 10;
+    }
+    if (sifre.matches(".*[A-Z].*")) {
+        puan += 10;
+    }
+    if (sifre.matches(".*[a-z].*")) {
+        puan += 10;
+    }
+    if (sifre.matches(".*[^a-zA-Z0-9].*")) {
+        puan += 10;
+    }
+    if (puan >= 50) {
+        return "Güçlü";
+    } else if (puan >= 30) {
+        return "Orta";
+    } else {
+        return "Zayıf";
+    }
+}
+public static void main() {
+    System.out.println("Şifrenin güç seviyesi: "+sifreguclumu("Güçlüşifre67?"));
+}
