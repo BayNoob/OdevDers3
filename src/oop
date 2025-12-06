@@ -1,0 +1,68 @@
+class Lesson {
+    String Teacher;
+    String Homework;
+    int Writenote;
+    int Speaknote;
+
+    Lesson(String Teacher, String Homework, int Writenote, int Speaknote) {
+        this.Teacher = Teacher;
+        this.Homework = Homework;
+        this.Writenote = Writenote;
+        this.Speaknote = Speaknote;
+    }
+    public String toString() {
+        return Teacher + " " + Homework + " " + Writenote + " " + Speaknote+ " | ";
+    }
+}
+
+class Day {
+    Lesson lesson1;
+    Lesson lesson2;
+    Lesson lesson3;
+    Lesson lesson4;
+    Lesson lesson5;
+    Lesson lesson6;
+    Lesson lesson7;
+    Lesson lesson8;
+
+    Day(Lesson lesson1, Lesson lesson2, Lesson lesson3, Lesson lesson4, Lesson lesson5, Lesson lesson6, Lesson lesson7, Lesson lesson8) {
+        this.lesson1 = lesson1;
+        this.lesson2 = lesson2;
+        this.lesson3 = lesson3;
+        this.lesson4 = lesson4;
+        this.lesson5 = lesson5;
+        this.lesson6 = lesson6;
+        this.lesson7 = lesson7;
+        this.lesson8 = lesson8;
+    }
+    public String toString() {
+        return lesson1 + "" + lesson2 +  lesson3 +  lesson4 +  lesson5 +  lesson6 + lesson7 + lesson8 ;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Lesson math = new Lesson("Kaan", "Cebir", 80,90);
+        Lesson music = new Lesson("Fatma", "Sol Anahtarı", 100, 100);
+        Lesson german = new Lesson("Derya", "Akkusativ", 76,30);
+        Lesson english = new Lesson("Nermin", "Past Tense", 90,90);
+        Lesson computer = new Lesson("Özgür","Python",100,100);
+        Lesson pe = new Lesson("Mert", "Zıplama",100,100);
+        Lesson turkish = new  Lesson("Murat", "Kitap",80,70);
+        Day monday   = new Day(math, math, music, music, german, german, english, turkish);
+        Day tuesday  = new Day(computer, math, music, german, english, turkish, pe, math);
+        Day wednesday= new Day(english, english, computer, music, turkish, german, pe, math);
+        Day thursday = new Day(music, computer, math, turkish, german, english, pe, computer);
+        Day friday   = new Day(turkish, german, english, math, music, computer, pe, turkish);
+        System.out.println("Pazartesi:");
+        System.out.println(monday);
+        System.out.println("Salı:");
+        System.out.println(tuesday);
+        System.out.println("Çarşamba:");
+        System.out.println(wednesday);
+        System.out.println("Perşembe:");
+        System.out.println(thursday);
+        System.out.println("Cuma:");
+        System.out.println(friday);
+    }
+}
